@@ -62,7 +62,7 @@ def non_max_suppression_fast(boxes, overlapThresh):
 
 
 def main():
-    cap = cv2.VideoCapture('test_video.mp4')
+    cap = cv2.VideoCapture(0)
 
     fps_start_time = datetime.datetime.now()
     fps = 0
