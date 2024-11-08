@@ -7,8 +7,8 @@ from centroidtracker import CentroidTracker
 protopath = "MobileNetSSD_deploy.prototxt"
 modelpath = "MobileNetSSD_deploy.caffemodel"
 detector = cv2.dnn.readNetFromCaffe(prototxt=protopath, caffeModel=modelpath)
-detector.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
-detector.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
+# detector.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
+# detector.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
 
 CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
@@ -61,7 +61,7 @@ def non_max_suppression_fast(boxes, overlapThresh):
 
 
 def main():
-    cap = cv2.VideoCapture('test_video.mp4')
+    cap = cv2.VideoCapture(0)
 
     fps_start_time = datetime.datetime.now()
     fps = 0
